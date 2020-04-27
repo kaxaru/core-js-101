@@ -181,6 +181,7 @@ const cssSelectorBuilder = {
   attr: (value) => new CssSelector().attr(value),
   pseudoClass: (value) => new CssSelector().pseudoClass(value),
   pseudoElement: (value) => new CssSelector().pseudoElement(value),
+  // eslint-disable-next-line max-len
   combine: (selector1, combinator, selector2) => new CssSelector().combine(selector1, combinator, selector2),
   stringify: () => CssSelector.stringify(),
 };

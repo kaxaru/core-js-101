@@ -16,6 +16,6 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
-    "max-len": [2, 125, 4, {"ignoreUrls": true}]
+    
   },
 };

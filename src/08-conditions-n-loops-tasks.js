@@ -167,6 +167,7 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
+  // eslint-disable-next-line max-len
   const firstLetter = [...str].filter((el) => el === Array.from(new Set([...str].reverse())).reverse()[0]);
   return firstLetter.length > 1 ? null : firstLetter[0];
 }
@@ -256,7 +257,8 @@ function reverseInteger(num) {
 function isCreditCardNumber(ccn) {
   const ccnString = ccn.toString();
   return [...ccnString.slice(0, -1)].reverse().map((el, idx) => (idx % 2 === 0 ? el * 2 : +el))
-    .map((el) => (el > 9 ? el - 9 : el)).reduce((a, b) => a + b, +ccnString[ccnString.length - 1]) % 10 === 0;
+    .map((el) => (el > 9 ? el - 9 : el))
+    .reduce((a, b) => a + b, +ccnString[ccnString.length - 1]) % 10 === 0;
 }
 
 /**
@@ -274,7 +276,8 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-  return num > 10 ? getDigitalRoot([...num.toString()].map((el) => +el).reduce((a, b) => a + b, 0)) : num;
+  return num > 10 ? getDigitalRoot([...num.toString()]
+    .map((el) => +el).reduce((a, b) => a + b, 0)) : num;
 }
 
 
